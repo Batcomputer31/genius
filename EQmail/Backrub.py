@@ -1,0 +1,31 @@
+import numpy as np
+
+def pagerank(links, damping=0.85, max_iter=100):
+    n = len(links)
+    pr = np.ones(n) / n
+    
+    for _ in range(max_iter):
+        new_pr = np.zeros(n)
+        for i in range(n):
+            for j in range(n):
+                if links[j][i] == 1:
+                    outlinks = sum(links[j])
+                    if outlinks > 0:
+                        new_pr[i] += pr[j] / outlinks
+        
+        new_pr = (1 - damping) / n + damping * new_pr
+        
+        if np.allclose(pr, new_pr, atol=1e-6):
+            break
+        pr = new_pr
+    
+    return pr
+
+def backrub_rank(web_pages, citations):
+    ranks = {}
+    for page in web_pages:
+        rank = 0
+        for citing_page in citations.get(page, []):
+            rank += 1
+        ranks[page] = rank
+    return ranks

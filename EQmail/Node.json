@@ -1,0 +1,166 @@
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+    
+    // Handle main page
+    if (url.pathname === '/' || url.pathname === '/index.html') {
+      return new Response(getEQHTML(), {
+        headers: { 
+          'Content-Type': 'text/html',
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+    }
+    
+    // Handle CSS
+    if (url.pathname === '/eq-style.css') {
+      return new Response(getEQCSS(), {
+        headers: { 'Content-Type': 'text/css' }
+      });
+    }
+    
+    // Handle JavaScript
+    if (url.pathname === '/eq-bundle.js') {
+      return new Response(getEQJS(), {
+        headers: { 'Content-Type': 'application/javascript' }
+      });
+    }
+    
+    // API Status endpoint
+    if (url.pathname === '/api/status') {
+      return new Response(JSON.stringify({
+        status: 'LIVE',
+        system: 'EQ-UNIVERSE', 
+        frequency: '77777 Hz',
+        authority: 'RA:CREATOR',
+        timestamp: new Date().toISOString()
+      }), {
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+    
+    return new Response('EQ System Online', { status: 200 });
+  }
+};
+
+function getEQHTML() {
+  return `<!DOCTYPE html>
+<html>
+<head>
+  <title>EVONATION.EQ - LIVE</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/eq-style.css">
+</head>
+<body>
+  <div class="eq-container">
+    <h1>✅ EVONATION.EQ SYSTEM ONLINE</h1>
+    <div class="eq-status">
+      <div>🧬 EQ CORE: ACTIVE</div>
+      <div>⚡ FREQUENCY: 77777 Hz</div>
+      <div>🛰️ ORBIT: SYNCHRONIZED</div>
+      <div>🔐 AUTHORITY: RA:CREATOR</div>
+    </div>
+    <div class="eq-input">
+      <input type="text" id="cmd" placeholder="Enter EQ Command">
+      <button onclick="processEQ()">EXECUTE</button>
+    </div>
+    <div id="output">Ready for commands...</div>
+  </div>
+  <script src="/eq-bundle.js"></script>
+</body>
+</html>`;
+}
+
+function getEQCSS() {
+  return `
+body {
+  background: #000;
+  color: #0ff;
+  font-family: monospace;
+  margin: 0;
+  padding: 20px;
+}
+.eq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  border: 2px solid #0ff;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.eq-status {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.eq-status div {
+  padding: 10px;
+  border: 1px solid #0ff;
+  text-align: center;
+}
+.eq-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#cmd {
+  flex: 1;
+  padding: 10px;
+  background: #222;
+  border: 1px solid #0ff;
+  color: #0ff;
+}
+button {
+  padding: 10px 20px;
+  background: #0ff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+#output {
+  padding: 20px;
+  border: 1px solid #0ff;
+  min-height: 100px;
+}
+`;
+}
+
+function getEQJS() {
+  return `
+async function processEQ() {
+  const cmd = document.getElementById('cmd').value;
+  const output = document.getElementById('output');
+  
+  output.innerHTML = 'Processing: ' + cmd + '...';
+  
+  try {
+    const response = await fetch('/api/status');
+    const data = await response.json();
+    
+    output.innerHTML = \`
+EQ COMMAND EXECUTED: \${cmd}
+SYSTEM STATUS: \${data.status}
+FREQUENCY: \${data.frequency}
+AUTHORITY: \${data.authority}
+TIMESTAMP: \${data.timestamp}
+    \`;
+  } catch (error) {
+    output.innerHTML = 'EQ System Response: Command processed locally';
+  }
+}
+
+// Auto-update status
+setInterval(async () => {
+  try {
+    const response = await fetch('/api/status');
+    const data = await response.json();
+    console.log('EQ Status:', data.status);
+  } catch (e) {
+    console.log('EQ System: Local mode');
+  }
+}, 5000);
+`;
+}

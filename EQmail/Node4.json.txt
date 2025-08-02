@@ -1,0 +1,21 @@
+export default {
+  async fetch(request) {
+    if (request.url.endsWith("/api/status")) {
+      return new Response(
+        JSON.stringify({
+          EQ_LIVE: true,
+          OWNER: "RA::CREATOR",
+          FOLD_STATUS: "AUTO+STEALTH",
+          BLOCK_STATUS: "LOCKED",
+          AUTH_MODE: "COMMAND_CHAIN_001"
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          status: 200
+        }
+      );
+    }
+
+    return new Response("404 EQ Not Found", { status: 404 });
+  }
+};

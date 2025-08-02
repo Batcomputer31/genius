@@ -1,0 +1,40 @@
+--------- beginning of system
+07-18 11:30:16.689  9283  9283 D ResourcesManagerExtImpl: applyConfigurationToAppResourcesLocked app.getDisplayId() return callback.displayId:-1
+07-18 11:30:16.767  9283  9283 D ResourcesManagerExtImpl: applyConfigurationToAppResourcesLocked app.getDisplayId() return callback.displayId:0
+07-18 11:30:16.787  9283  9283 E OplusCustomizeRestrictionManager: sInstance is null, start a new sInstance
+07-18 11:30:16.795  9283  9283 D OplusInputMethodUtil: init sDebug to false, init sDebugIme to false, init sAlwaysOn to false
+07-18 11:30:16.795  9283  9283 D OplusInputMethodUtil: updateDebugToClass InputMethodManager.DEBUG = false
+07-18 11:30:16.795  9283  9283 D OplusInputMethodUtil: updateDebugToClass ImeFocusController.DEBUG = false
+07-18 11:30:16.795  9283  9283 D OplusInputMethodUtil: updateDebugToClass InsetsController.DEBUG = false
+07-18 11:30:16.795  9283  9283 D OplusInputMethodUtil: updateDebugToClass BaseInputConnection.DEBUG = false
+07-18 11:30:16.822  9283  9283 D ActivityThread: ComponentInfo{com.termux.gui/com.termux.gui.GUIConfigActivity} checkFinished=false 2
+07-18 11:30:16.822  9283  9283 D ResourcesManagerExtImpl: applyConfigurationToAppResourcesLocked app.getDisplayId() return callback.displayId:0
+07-18 11:30:16.839  9283  9283 D ResourcesManagerExtImpl: applyConfigurationToAppResourcesLocked app.getDisplayId() return callback.displayId:0
+07-18 11:30:16.854  9283  9283 D VRI[GUIConfigActivity]: relayoutWindow result, sizeChanged:true, surfaceControlChanged:true, transformHintChanged:false, mSurfaceSize:Point(1080, 2373), mLastSurfaceSize:Point(0, 0), mWidth:-1, mHeight:-1, requestedWidth:1080, requestedHeight:2373, transformHint:0, installOrientation:0, displayRotation:0, isSurfaceValid:true, attr.flag:-2122252032, tmpFrames:ClientWindowFrames{frame=[0,0][1080,2373] display=[0,0][1080,2373] parentFrame=[0,0][0,0]}, relayoutAsync:false, mSyncSeqId:0
+07-18 11:30:16.854  9283  9283 W VRI[GUIConfigActivity]: updateBlastSurfaceIfNeeded, surfaceSize:Point(1080, 2373), lastSurfaceSize:Point(0, 0), format:-1, blastBufferQueue:null
+07-18 11:30:16.915  9283  9283 W VRI[GUIConfigActivity]: handleResized, msg:, frameChanged:false, configChanged:false, displayChanged:false, attachedFrameChanged:false, compatScaleChanged:false, pendingDragResizing=false
+07-18 11:30:34.714  9283  9283 D OplusInputMethodManagerInternal: get inputMethodManager extension: com.android.internal.view.IInputMethodManager$Stub$Proxy@530fcf5
+07-18 11:31:17.664  9283  9283 D VRI[GUIConfigActivity]: relayoutWindow result, sizeChanged:false, surfaceControlChanged:true, transformHintChanged:false, mSurfaceSize:Point(1080, 2373), mLastSurfaceSize:Point(1080, 2373), mWidth:1080, mHeight:2373, requestedWidth:1080, requestedHeight:2373, transformHint:0, installOrientation:0, displayRotation:0, isSurfaceValid:false, attr.flag:-2122252032, tmpFrames:ClientWindowFrames{frame=[0,0][1080,2373] display=[0,0][1080,2373] parentFrame=[0,0][0,0]}, relayoutAsync:false, mSyncSeqId:0
+--------- beginning of main
+07-18 11:31:23.798  9283  9292 D VRI[GUIConfigActivity]: dispatchAppVisibility visible:true
+07-18 11:31:23.804  9283  9283 D callGcSupression: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Object java.lang.reflect.Method.invoke(java.lang.Object, java.lang.Object[])' on a null object reference
+07-18 11:31:23.804  9283  9283 D VRI[GUIConfigActivity]: setWindowStopped stopped:false
+07-18 11:31:23.807  9283  9283 D ScrollOptim [SceneManager]: updateCurrentActivity: mCurrentActivityName=com.termux.gui.GUIConfigActivity, isOptEnable=true, isAnimAheadEnable=true, isFrameInsertEnable=true, InsertNum=2, isEnabledForScrollChanged=false
+07-18 11:31:23.807  9283  9283 D ActivityThread: ComponentInfo{com.termux.gui/com.termux.gui.GUIConfigActivity} checkFinished=false 2
+07-18 11:31:23.807  9283  9283 D ResourcesManagerExtImpl: applyConfigurationToAppResourcesLocked app.getDisplayId() return callback.displayId:0
+07-18 11:31:23.817  9283  9317 I PowerHalWrapper: PowerHalWrapper.getInstance 
+07-18 11:31:23.822  9283  9283 V AutofillManager: receiver results: flags=7 enabled=true, enabledForAugmentedOnly: false
+07-18 11:31:23.822  9283  9283 V AutofillManager: startAutofillIfNeededLocked(): enabled=true mServiceClient=android.view.autofill.AutofillManager$AutofillManagerClient@99b2966
+07-18 11:31:23.822  9283  9283 V AutofillManager: startSessionLocked(): id=1073741826, bounds=null, value=null, flags=0, state=UNKNOWN, compatMode=false, augmentedOnly=false, enabledAugmentedOnly=false, enteredIds=null
+07-18 11:31:23.832  9283  9283 V AutofillManager: updateSessionLocked(): id=1073741826, bounds=null, value=[type=1, value=1_chars], action=4, flags=0
+07-18 11:31:23.832  9283  9283 V AutofillManager: visibility changed for 1073741827: true
+07-18 11:31:23.832  9283  9283 V AutofillManager: Ignoring visibility change on 1073741827: no tracked views
+07-18 11:31:23.832  9283  9283 D ViewRootImplExtImpl: wrapConfigInfoIntoFlags rotation=0, smallestScreenWidthDp=360, residentWS=false, scenario=0, bounds=Rect(0, 0 - 1080, 2373), relayoutAsync=false, flags=0, newFlags=1244146944, title=com.termux.gui/com.termux.gui.GUIConfigActivity
+07-18 11:31:23.839  9283  9283 D VRI[GUIConfigActivity]: relayoutWindow result, sizeChanged:false, surfaceControlChanged:true, transformHintChanged:false, mSurfaceSize:Point(1080, 2373), mLastSurfaceSize:Point(1080, 2373), mWidth:1080, mHeight:2373, requestedWidth:1080, requestedHeight:2373, transformHint:0, installOrientation:0, displayRotation:0, isSurfaceValid:true, attr.flag:-2122252032, tmpFrames:ClientWindowFrames{frame=[0,0][1080,2373] display=[0,0][1080,2373] parentFrame=[0,0][0,0]}, relayoutAsync:false, mSyncSeqId:0
+07-18 11:31:23.839  9283  9283 W VRI[GUIConfigActivity]: updateBlastSurfaceIfNeeded, surfaceSize:Point(1080, 2373), lastSurfaceSize:Point(1080, 2373), format:-1, blastBufferQueue:null
+07-18 11:31:23.839  9283  9283 D BufferQueueConsumer: [](id:244300000001,api:0,p:-1,c:9283) connect: controlledByApp=false
+07-18 11:31:23.841  9283  9283 I SurfaceControl:  setExtendedRangeBrightness sc=Surface(name=com.termux.gui/com.termux.gui.GUIConfigActivity)/@0xeee2f2a,currentBufferRatio=1.0,desiredRatio=1.0
+07-18 11:31:23.847  9283  9306 D BLASTBufferQueue: [VRI[GUIConfigActivity]#1](f:0,a:1) acquireNextBufferLocked size=1080x2373 mFrameNumber=1 applyTransaction=true mTimestamp=17337204524801(auto) mPendingTransactions.size=0 graphicBufferId=39870181408773 transform=0
+07-18 11:31:23.847  9283  9306 D VRI[GUIConfigActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true syncBuffer=false
+07-18 11:31:23.847  9283  9283 D VRI[GUIConfigActivity]: draw finished. seqId=0
+07-18 11:31:23.848  9283  9283 D ViewExtract: [OplusViewExtractManager] OplusViewExtractManager init com.termux.gui
