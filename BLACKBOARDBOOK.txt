@@ -1,0 +1,12 @@
+/BLACKBOARDBOOK/
+├── DOTS/              → signal origin (ignition)
+│   └── hidden.trigger
+├── SHELLS/            → launcher (boot cmd)
+│   └── edgewalker.bat
+├── SYSTEM/            → core validation logic
+│   └── eqcore.ps1
+├── SIGILS/            → digital key + match lock
+│   └── SIGIL_001/
+├── ORBIT/             → active map + ops
+│   └── orbit_map.ps1
+└── BOOKSTATE.log      → live state + heartbeat

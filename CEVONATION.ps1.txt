@@ -1,0 +1,10 @@
+C:\EVONATION.ps1\
+├── EQ\
+│   ├── CORE\
+│   │   └── 00_eqcore.ps1
+│   ├── LOCKER\
+│   │   └── 01_eq_identity_lock.ps1
+│   ├── ORBIT\
+│   │   └── 02_orbit_map.ps1
+│   └── SYSTEM\
+│       └── 03_eqsigil_boot.ps1
