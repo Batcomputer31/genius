@@ -1,0 +1,16 @@
+// wrangler.jsonc - Cloudflare Workers configuration for EQ Natural Language Interface
+{
+  "name": "eq-natural-language-interface",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-03-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  // Environment variables - add your OpenAI API key in Cloudflare dashboard
+  // or use wrangler secret put OPENAI_API_KEY
+  "vars": {
+    "ENVIRONMENT": "production"
+  }
+}
